@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #95b9b6;
+}
+
+.wrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 30px 10px;
+}
+
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.icons span {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  color: #878787;
+  border-radius: 50%;
+  line-height: 38px;
+  margin: 0 1px;
+  text-align: center;
+  margin: 0 1px;
+  cursor: pointer;
+}
+
+.icons span:hover {
+  background: #f2f2f2;
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.calendar ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar ul li {
+  position: relative;
+  width: calc(100% / 7);
+  /* 7일이니까 */
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+}
+
+.calendar .days li {
+  z-index: 1;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.calendar .weeks li {
+  font-weight: 500;
+}
+
+.calendar .days li::before {
+  position: absolute;
+  content: '';
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.days li:hover::before {
+  background: #f2f2f2;
+}
+
+.days li.active {
+  color: #fff;
+}
+
+/* li.inactive 띄어쓰기 하면 적용안됨주의 */
+.days li.active::before {
+  background: #9859b6;
+}
+
+.inactive {
+  color: #ada9a9;
+}
